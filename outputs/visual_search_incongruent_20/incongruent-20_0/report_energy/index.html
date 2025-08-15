@@ -249,4 +249,32 @@ img{max-width:100%;height:auto;border:1px solid #eee;box-shadow:0 1px 3px rgba(0
       update(parseInt(sel.value));
     });
     </script>
+
+<script data-numeric-layer-sort>
+(function(){
+  function layerNum(el){
+    const t = (el.textContent||'');
+    let m = t.match(/layer\s*[:#\- ]*?(\d{1,3})/i);
+    if(m) return parseInt(m[1],10);
+    const img = el.querySelector('img,a[href]');
+    if(img){
+      const s=(img.src||img.href||'');
+      m = s.match(/layer_(\d{1,3})/i);
+      if(m) return parseInt(m[1],10);
+    }
+    if(el.dataset && el.dataset.layer) return parseInt(el.dataset.layer,10);
+    return NaN;
+  }
+  // pick a likely container: either #layers or the parent of first layer block
+  const blocks = Array.from(document.querySelectorAll('[data-layer], section, div'))
+    .filter(el => /layer\s*\d+/i.test(el.textContent||'') || (el.querySelector('img,a[href]')||{}).src?.includes('layer_'));
+  if(!blocks.length) return;
+  const parent = document.querySelector('#layers') || blocks[0].parentElement;
+  let items = Array.from(parent.children).filter(ch =>
+    /layer\s*\d+/i.test(ch.textContent||'') || (ch.querySelector('img,a[href]')||{}).src?.includes('layer_'));
+  if(items.length < 2) return;
+  items.sort((a,b)=>(layerNum(a)||0)-(layerNum(b)||0));
+  items.forEach(ch=>parent.appendChild(ch));
+})();
+</script>
 </body></html>
