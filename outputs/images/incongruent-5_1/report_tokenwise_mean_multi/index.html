@@ -1,0 +1,73 @@
+<!doctype html><html><head>
+<meta charset="utf-8"/>
+<title>incongruent-5_1 — tokenwise mean (multi-range)</title>
+<style>
+body{font-family:system-ui,Segoe UI,Arial,sans-serif;margin:16px}
+h1{font-size:20px;margin:0 0 6px}
+.note{color:#444;margin:0 0 14px;white-space:pre-wrap}
+.toolbar{margin:8px 0 14px;display:flex;gap:8px;align-items:center}
+select{padding:4px 8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.cell img{width:100%;border-radius:8px;display:block}
+.cap{margin-top:4px;font-size:12px;color:#333}
+pre.gen{background:#f7f7f7;padding:10px;border-radius:8px;white-space:pre-wrap}
+</style>
+</head><body>
+<h1>incongruent-5_1 — Token-wise mean attention (energy overlays)</h1>
+<div class="note">Use the selector to switch which layer range is averaged.
+Ranges available on this page: 09→last, 00→last, 13→last.</div>
+
+<div><strong>Model response</strong></div>
+<pre class="gen">(generation text not found)</pre>
+
+<div class="toolbar">
+  <label for="rng">Average over layers:</label>
+  <select id="rng">
+    <option value="09_last" selected>09 → last</option><option value="00_last">00 → last</option><option value="13_last">13 → last</option>
+  </select>
+</div>
+
+<div class="grid">
+
+        <div class="cell">
+          <img class="rng rng-09_last" data-tag="09_last" src="../layer_MEAN_09_last/overlays_original_energy_title/token_00.png" style=""/><img class="rng rng-00_last" data-tag="00_last" src="../layer_MEAN_00_last/overlays_original_energy_title/token_00.png" style="display:none;"/><img class="rng rng-13_last" data-tag="13_last" src="../layer_MEAN_13_last/overlays_original_energy_title/token_00.png" style="display:none;"/>
+          <div class="cap">0: #0</div>
+        </div>
+        <div class="cell">
+          <img class="rng rng-09_last" data-tag="09_last" src="../layer_MEAN_09_last/overlays_original_energy_title/token_01.png" style=""/><img class="rng rng-00_last" data-tag="00_last" src="../layer_MEAN_00_last/overlays_original_energy_title/token_01.png" style="display:none;"/><img class="rng rng-13_last" data-tag="13_last" src="../layer_MEAN_13_last/overlays_original_energy_title/token_01.png" style="display:none;"/>
+          <div class="cap">1: #1</div>
+        </div>
+        <div class="cell">
+          <img class="rng rng-09_last" data-tag="09_last" src="../layer_MEAN_09_last/overlays_original_energy_title/token_02.png" style=""/><img class="rng rng-00_last" data-tag="00_last" src="../layer_MEAN_00_last/overlays_original_energy_title/token_02.png" style="display:none;"/><img class="rng rng-13_last" data-tag="13_last" src="../layer_MEAN_13_last/overlays_original_energy_title/token_02.png" style="display:none;"/>
+          <div class="cap">2: #2</div>
+        </div>
+        <div class="cell">
+          <img class="rng rng-09_last" data-tag="09_last" src="../layer_MEAN_09_last/overlays_original_energy_title/token_03.png" style=""/><img class="rng rng-00_last" data-tag="00_last" src="../layer_MEAN_00_last/overlays_original_energy_title/token_03.png" style="display:none;"/><img class="rng rng-13_last" data-tag="13_last" src="../layer_MEAN_13_last/overlays_original_energy_title/token_03.png" style="display:none;"/>
+          <div class="cap">3: #3</div>
+        </div>
+        <div class="cell">
+          <img class="rng rng-09_last" data-tag="09_last" src="../layer_MEAN_09_last/overlays_original_energy_title/token_04.png" style=""/><img class="rng rng-00_last" data-tag="00_last" src="../layer_MEAN_00_last/overlays_original_energy_title/token_04.png" style="display:none;"/><img class="rng rng-13_last" data-tag="13_last" src="../layer_MEAN_13_last/overlays_original_energy_title/token_04.png" style="display:none;"/>
+          <div class="cap">4: #4</div>
+        </div>
+        <div class="cell">
+          <img class="rng rng-09_last" data-tag="09_last" src="../layer_MEAN_09_last/overlays_original_energy_title/token_05.png" style=""/><img class="rng rng-00_last" data-tag="00_last" src="../layer_MEAN_00_last/overlays_original_energy_title/token_05.png" style="display:none;"/><img class="rng rng-13_last" data-tag="13_last" src="../layer_MEAN_13_last/overlays_original_energy_title/token_05.png" style="display:none;"/>
+          <div class="cap">5: #5</div>
+        </div>
+        <div class="cell">
+          <img class="rng rng-09_last" data-tag="09_last" src="../layer_MEAN_09_last/overlays_original_energy_title/token_06.png" style=""/><img class="rng rng-00_last" data-tag="00_last" src="../layer_MEAN_00_last/overlays_original_energy_title/token_06.png" style="display:none;"/><img class="rng rng-13_last" data-tag="13_last" src="../layer_MEAN_13_last/overlays_original_energy_title/token_06.png" style="display:none;"/>
+          <div class="cap">6: #6</div>
+        </div>
+</div>
+
+<script>
+const sel=document.getElementById('rng');
+function update(){
+  const tag = sel.value;
+  for(const img of document.querySelectorAll('.grid img')){
+    img.style.display = (img.dataset.tag===tag) ? '' : 'none';
+  }
+}
+sel.addEventListener('change', update);
+update();
+</script>
+</body></html>
