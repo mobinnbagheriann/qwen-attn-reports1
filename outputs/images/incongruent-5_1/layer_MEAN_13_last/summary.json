@@ -1,0 +1,92 @@
+{
+  "prompt": "You are presented with an image containing\na set of letters, specifically the letters 'L'\nand 'T'. These letters will appear in either\nred or green. Your task is to determine if\nthere are any red 'L's in the image. Follow\nthese steps carefully:\n1. Describe each shape in the image, noting\ntheir color.\n2. Conclude your response by stating [True]\nif the letter 'L' appears in red, or [False]\nif there are no red 'L's.\nEnclose your final answer in square\nbrackets (Final Answer: []), as shown.",
+  "image_path": "/home/mmd/vlm-binding-main/data/vlm/search_custom/images/incongruent-5_1.png",
+  "original_image_size_wh": [
+    256,
+    256
+  ],
+  "model_input_path": "outputs/run_20250815_210218/model_input.png",
+  "model_input_size_hw": [
+    324,
+    1176
+  ],
+  "grid_thw": [
+    1,
+    18,
+    18
+  ],
+  "generated_text": "[Final Answer: True]",
+  "generated_tokens": [
+    "[",
+    "Final",
+    " Answer",
+    ":",
+    " True",
+    "]",
+    "▯"
+  ],
+  "token_to_image_mass": [
+    0.013851583003997803,
+    0.011437997221946716,
+    0.0029547885060310364,
+    0.00301486998796463,
+    0.012159861624240875,
+    0.007119238376617432,
+    0.004329480230808258
+  ],
+  "top5_indices_per_token": [
+    [
+      23,
+      2,
+      5,
+      0,
+      48
+    ],
+    [
+      23,
+      48,
+      64,
+      0,
+      66
+    ],
+    [
+      0,
+      66,
+      23,
+      7,
+      48
+    ],
+    [
+      0,
+      66,
+      23,
+      64,
+      48
+    ],
+    [
+      64,
+      66,
+      23,
+      48,
+      13
+    ],
+    [
+      64,
+      66,
+      23,
+      48,
+      20
+    ],
+    [
+      0,
+      66,
+      23,
+      7,
+      64
+    ]
+  ],
+  "prompt_len": 227,
+  "num_image_tokens_in_prompt": 81,
+  "layer_idx": 13,
+  "head_idx": -1
+}
